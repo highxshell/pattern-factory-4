@@ -10,15 +10,15 @@ var once sync.Once
 type basicSoldier struct {
 }
 
-func (b basicSoldier) Info() {
+func (b *basicSoldier) Info() {
 	fmt.Println("I'm a basic Soldier")
 }
 
-func (b basicSoldier) Attack() int {
+func (b *basicSoldier) Attack() int {
 	return 1
 }
 
-func (b basicSoldier) HealthPoints() int {
+func (b *basicSoldier) HealthPoints() int {
 	return 100
 }
 
