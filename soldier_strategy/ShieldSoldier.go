@@ -13,7 +13,7 @@ func (s *ShieldSoldier) Info() {
 }
 
 func (s *ShieldSoldier) Attack() int {
-	return s.Soldier.Attack() - 10
+	return s.Soldier.Attack() - 5
 }
 
 func (s *ShieldSoldier) HealthPoints() int {
