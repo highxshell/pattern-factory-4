@@ -1,4 +1,4 @@
-package soldier_strategy
+package soldier_adapter
 
 type GreekSpeech interface {
 	SpeakingGreek()

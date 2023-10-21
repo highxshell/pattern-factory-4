@@ -1,9 +1,12 @@
-package soldier_strategy
+package soldier_adapter
 
-import "fmt"
+import (
+	"fmt"
+	"strategy-as1/soldier_strategy"
+)
 
 type RomanTranslator struct {
-	RomanSoldier *BowSoldier
+	RomanSoldier *soldier_strategy.BowSoldier
 }
 
 func (r *RomanTranslator) SpeakingGreek() {

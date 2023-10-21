@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"strategy-as1/config"
+	"strategy-as1/soldier_adapter"
 	"strategy-as1/soldier_strategy"
 )
 
@@ -35,11 +36,11 @@ func main() {
 
 	//adapter
 	fmt.Println()
-	adapter := &soldier_strategy.Adapter{}
+	adapter := &soldier_adapter.Adapter{}
 	soldier6 := &soldier_strategy.ShieldSoldier{}
 	adapter.TranslateTwoLanguages(soldier6)
 	soldier7 := &soldier_strategy.BowSoldier{}
-	romanTranslator := &soldier_strategy.RomanTranslator{
+	romanTranslator := &soldier_adapter.RomanTranslator{
 		RomanSoldier: soldier7,
 	}
 	adapter.TranslateTwoLanguages(romanTranslator)
