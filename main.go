@@ -37,11 +37,11 @@ func main() {
 	//adapter
 	fmt.Println()
 	adapter := &soldier_adapter.Adapter{}
-	soldier6 := &soldier_strategy.ShieldSoldier{}
-	adapter.TranslateTwoLanguages(soldier6)
-	soldier7 := &soldier_strategy.BowSoldier{}
+	greekResident := &soldier_adapter.GreekResident{}
+	adapter.TranslateTwoLanguages(greekResident)
+	romanResident := &soldier_adapter.RomanResident{}
 	romanTranslator := &soldier_adapter.RomanTranslator{
-		RomanSoldier: soldier7,
+		RomanResident: romanResident,
 	}
 	adapter.TranslateTwoLanguages(romanTranslator)
 }
