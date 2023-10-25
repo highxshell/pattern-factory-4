@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"strategy-as1/config"
+	"strategy-as1/factory"
 	"strategy-as1/soldier_adapter"
 	"strategy-as1/soldier_strategy"
 )
@@ -37,11 +38,30 @@ func main() {
 	//adapter
 	fmt.Println()
 	adapter := &soldier_adapter.Adapter{}
-	soldier6 := &soldier_strategy.ShieldSoldier{}
-	adapter.TranslateTwoLanguages(soldier6)
-	soldier7 := &soldier_strategy.BowSoldier{}
+	greekResident := &soldier_adapter.GreekResident{}
+	adapter.TranslateTwoLanguages(greekResident)
+	romanResident := &soldier_adapter.RomanResident{}
 	romanTranslator := &soldier_adapter.RomanTranslator{
-		RomanSoldier: soldier7,
+		RomanResident: romanResident,
 	}
 	adapter.TranslateTwoLanguages(romanTranslator)
+
+	//factory
+	fmt.Println()
+	archer, _ := factory.GetSoldier("Archer")
+	shieldbearer, _ := factory.GetSoldier("Shieldbearer")
+
+	printDetails(archer)
+	printDetails(shieldbearer)
+}
+
+//factory
+
+func printDetails(i soldier_strategy.ISoldier) {
+	fmt.Printf("Soldier: %s", i.GetName())
+	fmt.Println()
+	fmt.Printf("Attack: %d", i.GetAttack())
+	fmt.Println()
+	fmt.Printf("HP: %d", i.GetHP())
+	fmt.Println()
 }

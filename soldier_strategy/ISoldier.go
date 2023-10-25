@@ -8,6 +8,13 @@ type ISoldier interface {
 	Attack() int
 	HealthPoints() int
 	Info()
+	//factory
+	setAttack(attack int)
+	setHP(HP int)
+	setName(name string)
+	GetAttack() int
+	GetHP() int
+	GetName() string
 }
 
 type SoldierBehavior struct {

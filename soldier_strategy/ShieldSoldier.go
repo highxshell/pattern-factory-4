@@ -5,6 +5,7 @@ import (
 )
 
 type ShieldSoldier struct {
+	BasicSoldier
 	Soldier ISoldier
 }
 
@@ -22,4 +23,16 @@ func (s *ShieldSoldier) HealthPoints() int {
 
 func (s *ShieldSoldier) SpeakingGreek() {
 	fmt.Println("*speaks Greek*")
+}
+
+// factory
+
+func NewShieldSoldier() ISoldier {
+	return &ShieldSoldier{
+		BasicSoldier: BasicSoldier{
+			attack: 5,
+			HP:     150,
+			name:   "Shieldbearer",
+		},
+	}
 }

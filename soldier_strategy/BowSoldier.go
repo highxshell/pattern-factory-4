@@ -3,6 +3,7 @@ package soldier_strategy
 import "fmt"
 
 type BowSoldier struct {
+	BasicSoldier
 	Soldier ISoldier
 }
 
@@ -20,4 +21,16 @@ func (b *BowSoldier) HealthPoints() int {
 
 func (b *BowSoldier) SpeakingRoman() {
 	fmt.Println("*speaks Roman*")
+}
+
+//factory
+
+func NewBowSoldier() ISoldier {
+	return &BowSoldier{
+		BasicSoldier: BasicSoldier{
+			attack: 25,
+			HP:     80,
+			name:   "Archer",
+		},
+	}
 }
