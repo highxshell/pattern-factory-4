@@ -1,0 +1,11 @@
+github.com/gmarik/go-erd v0.0.0-20170331193134-80f366849d69 h1:7Fp374kLCtiBZHuBqDfuxp17v5pykWSLz1tKCKfoa10=
+github.com/gmarik/go-erd v0.0.0-20170331193134-80f366849d69/go.mod h1:zMJVc6tC3M7cvexoAGw0WMBNREbiVDWXUSFBi9hUFSE=
+github.com/jessevdk/go-flags v1.3.0 h1:QmKsgik/Z5fJ11ZtlcA8F+XW9dNybBNFQ1rngF3MmdU=
+github.com/jessevdk/go-flags v1.3.0/go.mod h1:4FA24M0QyGHXBuZZK/XkWh8h0e1EYbRYJSGM75WSRxI=
+github.com/jteeuwen/go-bindata v3.0.7+incompatible/go.mod h1:JVvhzYOiGBnFSYRyV00iY8q7/0PThjIYav1p9h5dmKs=
+github.com/kaishuu0123/erd-go v1.4.6 h1:SW30TQEaDJOtvlylojpQJVDveYqUrCEvQoT/I2NARiM=
+github.com/kaishuu0123/erd-go v1.4.6/go.mod h1:2FYCyYnBm2ToXvo9oKBEtwwPS6b7tY7jOSOi7JnMjUA=
+golang.org/x/crypto v0.0.0-20170202201058-bed12803fa96 h1:wszq1jlNwkJcdZ05G3gpSdgYKTHwHCorxTZTG88nXN4=
+golang.org/x/crypto v0.0.0-20170202201058-bed12803fa96/go.mod h1:6SG95UA2DQfeDnfUPMdvaQW0Q7yPrPDi9nlGo2tz2b4=
+golang.org/x/sys v0.0.0-20170201051245-7a6e5648d140 h1:wxED/WNVMni7c0XHQ2hO7hXtwxskOTX5+iGd53LdZO0=
+golang.org/x/sys v0.0.0-20170201051245-7a6e5648d140/go.mod h1:STP8DvDyc/dI5b8T5hshtkjS+E42TnysNCUPdjciGhY=

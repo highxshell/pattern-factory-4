@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"strategy-as1/config"
 	"strategy-as1/factory"
+	"strategy-as1/observer"
 	"strategy-as1/soldier_adapter"
 	"strategy-as1/soldier_strategy"
 )
@@ -14,7 +15,7 @@ func main() {
 	instanceOfDB.Info()
 	configSingleton := config.GetInstanceOfDB()
 	configSingleton.Info()
-	//strategy/decorator
+	//decorator/strategy
 	basicSoldier := soldier_strategy.BasicSoldier{}
 	bowSoldier := soldier_strategy.BowSoldier{Soldier: &basicSoldier}
 	shieldSoldier := soldier_strategy.ShieldSoldier{Soldier: &basicSoldier}
@@ -53,6 +54,20 @@ func main() {
 
 	printDetails(archer)
 	printDetails(shieldbearer)
+
+	//observer
+	fmt.Println()
+	legendaryBowItem := observer.NewItem("bow of the Galadhrim")
+
+	observerPlayer1 := &observer.Customer{Id: "player1@gmail.com"}
+	observerPlayer2 := &observer.Customer{Id: "player2@gmail.com"}
+
+	legendaryBowItem.Register(observerPlayer1)
+	legendaryBowItem.Register(observerPlayer2)
+
+	legendaryBowItem.NotifyAll()
+	legendaryBowItem.DeRegister(observerPlayer2)
+	legendaryBowItem.NotifyAll()
 }
 
 //factory
