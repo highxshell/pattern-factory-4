@@ -10,9 +10,9 @@ If this check fails, then it means that the singleInstance field is already popu
 - The sync.Once will only perform the operation once.
 
 # STRATEGY PATTERN
--BowSolider: a soldier with a BOW.
--ShieldSoldier: a soldier with a SHIELD.
--ShieldBowSoldier: a soldier that picked up a SHIELD and a BOW.
+- BowSolider: a soldier with a BOW.
+- ShieldSoldier: a soldier with a SHIELD.
+- ShieldBowSoldier: a soldier that picked up a SHIELD and a BOW.
 
 The problem is how to decouple our soldier class from these weapons(algorithms) so that we can change the weapon(algorithm) at run time. Also, the soldier class should not change when a new weapon(algorithm) is being added.
 
