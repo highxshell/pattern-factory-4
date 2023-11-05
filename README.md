@@ -57,3 +57,7 @@ Option 3 is most viable, and this is what the Observer pattern is all about. The
 
 Subject, the instance which publishes an event when anything happens.
 Observer, which subscribes to the subject events and gets notified when they happen.
+
+# ER-DIAGRAM
+![diagram](https://github.com/highxshell/pattern-factory-4/assets/121538758/ad3f74c7-0080-4b0f-85c7-e03448b31ad3)
+
