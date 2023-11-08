@@ -1,4 +1,5 @@
-# SINGLETON PATTERN
+# SOLDIER PROJECT GAME | DESIGN PATTERNS IN GO
+## SINGLETON PATTERN
 Usually, a singleton instance is created when the struct is first initialized. To make this happen, we define the getInstance method on the struct.
 This method will be responsible for creating and returning the singleton instance. Once created, the same singleton instance will be returned every time the getInstance is called.
 
@@ -9,7 +10,7 @@ If this check fails, then it means that the singleInstance field is already popu
 
 - The sync.Once will only perform the operation once.
 
-# STRATEGY PATTERN
+## STRATEGY PATTERN
 - BowSolider: a soldier with a BOW.
 - ShieldSoldier: a soldier with a SHIELD.
 - ShieldBowSoldier: a soldier that picked up a SHIELD and a BOW.
@@ -22,12 +23,12 @@ Let’s say the common interface name is ISoldier.
 Now our main soldier class will embed the ISoldier interface. Instead of implementing all types of weapon's algorithms in itself, our soldier class will delegate the execution to the ISoldier interface.
 Since ISoldier is an interface, we can change the algorithm in run time to either BowSoldier, ShieldSoldier, ShieldBowSoldier without changing the soldier class.
 
-# DECORATOR PATTERN
+## DECORATOR PATTERN
 Using decorators you can wrap objects countless number of times since both target objects and decorators follow the same interface. The resulting object will get a stacking behavior of all wrappers.
 
 We have basicSoldier with Attack=10, HP=100, at some point our basicSoldier found a bow, now he is bowSoldier with Attack=10+15, HP=100-20, after that he desides to took a shield also, so we are going to wrap wrapped basicSoldier, and get Attack=10+15-5, HP=100-20+50.
 
-# ADAPTER PATTERN
+## ADAPTER PATTERN
 The Adapter acts as a wrapper between two objects. It catches calls for one object and transforms them to format and interface recognizable by the second object.
 
 - We have a adapter code that expects some features of an object (Greek speech), but we have another object called translator (Roman translator) which offers the same functionality but through a different interface (Roman speech).
@@ -35,7 +36,7 @@ The Adapter acts as a wrapper between two objects. It catches calls for one obje
 - Translate the request from the adapter to the translator in the form that the adapter expects.
 - The translator accepts a greek speech and then translates its signals into a roman speech and passes them to the speakingRoman in RomanSoldier.
 
-# FACTORY PATTERN
+## FACTORY PATTERN
 It’s impossible to implement the classic Factory Method pattern in Go due to lack of OOP features such as classes and inheritance.
 However, we can still implement the basic version of the pattern, the Simple Factory.
 
@@ -45,7 +46,7 @@ In this example, we’re going to create various types of soldiers using a facto
 - There is a basicSoldier struct type that implements the ISoldier interface. Two concrete BowSoldier and ShieldSoldier embed solder struct and indirectly implement all ISoldier methods.
 - The soldierFactory struct serves as a factory, which creates soldiers of the desired type based on an incoming argument. The main.go acts as a client. Instead of directly interacting with Archer or Shieldbearer, it relies on soldierFactory to create instances of various soldiers, only using string parameters to control the production.
 
-# OBSERVER PATTERN
+## OBSERVER PATTERN
 The Observer pattern provides a way to subscribe and unsubscribe to and from these events for any object that implements a subscriber interface.
 
 In our game e-commerce shop, items go out of stock from time to time. There can be customers who are interested in a particular item that went out of stock. There are three solutions to this problem:
@@ -58,6 +59,6 @@ Option 3 is most viable, and this is what the Observer pattern is all about. The
 Subject, the instance which publishes an event when anything happens.
 Observer, which subscribes to the subject events and gets notified when they happen.
 
-# ER-DIAGRAM
+## ER-DIAGRAM
 ![diagram](https://github.com/highxshell/pattern-factory-4/assets/121538758/ad3f74c7-0080-4b0f-85c7-e03448b31ad3)
 
