@@ -58,16 +58,19 @@ func main() {
 	//observer
 	fmt.Println()
 	legendaryBowItem := observer.NewItem("bow of the Galadhrim")
-
+	legendaryShieldItem := observer.NewItem("Boromir's shield")
+	itemManager := observer.NewItemManager(legendaryBowItem)
+	itemManager1 := observer.NewItemManager(legendaryShieldItem)
 	observerPlayer1 := &observer.Customer{Id: "player1@gmail.com"}
 	observerPlayer2 := &observer.Customer{Id: "player2@gmail.com"}
 
-	legendaryBowItem.Register(observerPlayer1)
-	legendaryBowItem.Register(observerPlayer2)
-
-	legendaryBowItem.NotifyAll()
-	legendaryBowItem.DeRegister(observerPlayer2)
-	legendaryBowItem.NotifyAll()
+	itemManager.Register(observerPlayer1)
+	itemManager.Register(observerPlayer2)
+	itemManager.UpdateAvailability()
+	itemManager1.Register(observerPlayer2)
+	itemManager.DeRegister(observerPlayer2)
+	itemManager.UpdateAvailability()
+	itemManager1.UpdateAvailability()
 }
 
 //factory
